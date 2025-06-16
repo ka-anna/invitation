@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <title>Հրավիրված եք՝ Մեր Զինվորի Դիմավորմանը</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Armenian', sans-serif;
+      background: url('https://a.d-cd.net/HIAAAgBdgeA-1920.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #5e4637;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.1);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .invite {
+      max-width: 720px;
+      text-align: center;
+      padding: 40px;
+      border-radius: 16px;
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #3e4d3a;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #3e4d3a;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+      margin: 12px 0;
+    }
+
+    a {
+      color: #3e4d3a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #countdown {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: white;
+      padding: 12px 20px;
+      border: 2px solid black;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="invite">
+      <h1>Սիրելի հյուրեր,</h1>
+      <p>Ցանկանում ենք Ձեզ հետ կիսել մեր<br>ընտանիքում սպասվող կարևոր իրադարձությունը:</p>
+      <p><strong>Մեր ԶԻՆՎՈՐԻ<br>Վերադարձին մնացել է</strong></p>
+      <div id="countdown">Բեռնվում է...</div>
+      <p>Սիրով հրավիրում ենք Ձեզ՝ կիսելու մեր կյանքի կարևոր ու շատ սպասված պահերը:</p>
+
+      <p><strong>Դիմավորում՝</strong><br>
+      17.07.2025թ.<br>
+      <a href="https://yandex.com/maps/10262/yerevan/house/YE0YcwFiSEYEQFpqfX15dHlmZg==/?ll=44.562488%2C40.185509&z=18.59" target="_blank">
+        ք.Երևան, Բ.Մուրադյան 14
+      </a>
+      </p>
+
+      <p><strong>Խնջույք՝</strong><br>
+      21.07.2025թ.<br>
+      «Նոր Դվին» ռեստորանային համալիր<br>
+      <a href="https://yandex.com/maps/org/215745175248/?ll=44.292126%2C40.176574&z=17.17" target="_blank">
+        ք.Էջմիածին, Աշտարակի խճուղի, 1 շենք
+      </a>
+      </p>
+
+      <h2>Սիրով սպասում ենք...</h2>
+    </div>
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const today = new Date();
+      const targetDate = new Date(today.getFullYear(), 6, 17); // July 17
+
+      if (today > targetDate) {
+        targetDate.setFullYear(today.getFullYear() + 1);
+      }
+
+      const diff = targetDate - today;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('countdown').textContent =
+        `${days} օր ${hours} ժամ ${minutes} րոպե ${seconds} վայրկյան`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
